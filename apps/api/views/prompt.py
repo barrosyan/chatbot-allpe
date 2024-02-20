@@ -16,22 +16,25 @@ headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 
 class ChatAPIViewSet(ViewSet):
-    @method_decorator(cache_page(60*60*2))
-    @method_decorator(vary_on_headers("Authorization",))
+    # @method_decorator(cache_page(60*60*2))
+    # @method_decorator(vary_on_headers("Authorization",))
+    
+    def get_model_response(self, input_text):
+        response = requests.post(MODEL_URL, headers=headers, json={"inputs": input_text})
+        return response.json()
+    
     @action(
         detail=False,
         methods=["post"],
         url_path="chat",
     )
-    def get_model_response(self, input_text):
-        response = requests.post(MODEL_URL, headers=headers, json={"inputs": input_text})
-        return response.json()
-    
     def query(self, request):
         chat = []
         i = 1
         while True:
             user_input = request.data.get('prompt')
+            print("sadasdsad")
+            print(user_input)
 
             if user_input:
                 if i == 1:
