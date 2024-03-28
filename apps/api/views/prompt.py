@@ -20,11 +20,11 @@ class ChatAPIViewSet(ViewSet):
     # @method_decorator(cache_page(60*60*2))
     # @method_decorator(vary_on_headers("Authorization",))
     
-    def get_model_response(self, input_text):
+    def get_model_response(self, input_text, context):
         response = requests.post(
             MODEL_URL,
             headers=headers,
-            json={"inputs": input_text}
+            json={"inputs": input_text, "context": context}
         )
         return response.json()
     
@@ -33,7 +33,11 @@ class ChatAPIViewSet(ViewSet):
         methods=["post"],
         url_path="chat",
     )
-    def query(self, request):
+    def query(
+        self, 
+        request, 
+        context='A partir de agora você é um chat especializado para customer success, na área de podologia, portanto, responda a mensagem a seguir (Lembre de respeitar os direitos humanos, sem palavras de baixo calão e sem autodiagnóstico, apenas sugestões, mas sempre sugerindo um atendimento de um profissional especializado na All Pé, perguntando se gostaria de agendar atendimento com algum): ', 
+        user_input=None):
         
         with open("chat_messages.json", 'r') as f:
             chat = json.loads(f.read())
@@ -53,7 +57,6 @@ class ChatAPIViewSet(ViewSet):
 
         if user_input:
             if i == 1:
-                context = 'A partir de agora você é um chat especializado para customer success, portanto, responda a pergunta a seguir: '
                 chat.append(context + user_input)
 
                 translated_input = GoogleTranslator(source='auto', target='en').translate('\n'.join(chat))
