@@ -11,8 +11,9 @@ import decouple
 import json
 
 
-API_TOKEN = decouple.config("API_TOKEN", default=None)
-MODEL_URL = decouple.config("MODEL_URL", default=None)
+API_TOKEN='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'
+API_URL = "https://api-inference.huggingface.co/models/openchat/openchat-3.5-0106"
+
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 
