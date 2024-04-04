@@ -1,6 +1,9 @@
 # Use uma imagem base que inclua Python
 FROM python:3.9
 
+ENV PYTHONUNBUFFERED=1 \
+    DJANGO_SETTINGS_MODULE=chatbot.settings
+
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
