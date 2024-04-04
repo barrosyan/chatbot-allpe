@@ -43,7 +43,7 @@ class ChatAPIViewSet(ViewSet):
         
         try:
             with open("chat_messages.txt", 'r') as f:
-                chat = f.readlines())
+                chat = f.readlines()
                 f.close()
             i = 2
         except:
