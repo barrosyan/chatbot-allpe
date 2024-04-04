@@ -26,7 +26,7 @@ class ChatAPIViewSet(ViewSet):
         response = requests.post(
             MODEL_URL,
             headers=headers,
-            json={"inputs": input_text, "context": context}
+            json={"prompt": input_text, "context": context}
         )
         return response.json()
     
