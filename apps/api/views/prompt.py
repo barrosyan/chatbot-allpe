@@ -38,7 +38,7 @@ class ChatAPIViewSet(ViewSet):
     def query(
         self, 
         request, 
-        context='A partir de agora você é um chat especializado para customer success, na área de podologia, portanto, responda a mensagem a seguir (Lembre de respeitar os direitos humanos, sem palavras de baixo calão e sem autodiagnóstico, apenas sugestões, mas sempre sugerindo um atendimento de um profissional especializado na All Pé, perguntando se gostaria de agendar atendimento com algum): ', 
+        context="From now on, you are a specialized chat for customer success, in the podiatry area, so respond to the following message (Remember to respect human rights, without profanity and without self-diagnosis, only suggestions, but always suggesting an appointment with a specialized professional at All Pé, asking if they would like to schedule an appointment with anyone):", 
         user_input=None):
         
         try:
@@ -62,14 +62,14 @@ class ChatAPIViewSet(ViewSet):
                 chat.append(context + user_input)
 
                 translated_input = GoogleTranslator(source='auto', target='en').translate('\n'.join(chat))
-                outputs = self.get_model_response(translated_input)
+                outputs = self.get_model_response(translated_input,context)
                 output = outputs[0]['generated_text'].split('\n\n')[1]
                 translated_output = GoogleTranslator(source='auto', target='pt').translate(output).replace('Answer: ', '')
                 i = 2
             else:
                 chat.append(user_input)
                 translated_input = GoogleTranslator(source='auto', target='en').translate('Responda apenas a última sentença desta conversa baseando-se no contexto completo' + ('\n'.join(chat)))
-                outputs = self.get_model_response(translated_input)
+                outputs = self.get_model_response(translated_input,context)
                 output = outputs[0]['generated_text'].split('\n')[len(chat)]
                 translated_output = GoogleTranslator(source='auto', target='pt').translate(output).replace('Answer: ', '')
 
