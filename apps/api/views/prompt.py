@@ -47,9 +47,8 @@ class ChatAPIViewSet(ViewSet):
                 f.close()
             i = 2
         except:
-            if not chat:
-                chat = []
-                i = 1
+            chat = []
+            i = 1
 
         user_input = request.data.get('prompt')
         if not user_input:
