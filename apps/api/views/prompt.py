@@ -79,7 +79,7 @@ class ChatAPIViewSet(ViewSet):
             chat.append(translated_output)
 
             with open("chat_messages.txt", 'w') as f:
-                f.write(chat.join('\n'))
+                f.write('\n'.join(chat))
                 f.close()
             return JsonResponse({'message': translated_output})
         else:
