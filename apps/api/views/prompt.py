@@ -26,7 +26,7 @@ class ChatAPIViewSet(ViewSet):
         response = requests.post(
             API_URL,
             headers=headers,
-            json={"prompt": input_text, "context": context}
+            json={"inputs": input_text.replace(context,""), "context": context}
         )
         return response.json()
     
@@ -63,7 +63,10 @@ class ChatAPIViewSet(ViewSet):
 
                 translated_input = GoogleTranslator(source='auto', target='en').translate('\n'.join(chat))
                 outputs = self.get_model_response(translated_input,context)
-                output = outputs[0]['generated_text'].split('\n\n')[1]
+                try:
+                    output = outputs[0]['generated_text'].split('\n\n')[1]
+                except:
+                    output = outputs[0]['generated_text']
                 translated_output = GoogleTranslator(source='auto', target='pt').translate(output).replace('Answer: ', '')
                 i = 2
             else:
