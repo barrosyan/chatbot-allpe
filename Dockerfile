@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Defina o diretório de trabalho dentro do contêiner
-WORKDIR /apps
+WORKDIR /app
 
 # Copie o arquivo requirements.txt para o diretório de trabalho
 COPY requirements.txt .
