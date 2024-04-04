@@ -17,6 +17,7 @@ API_URL = "https://api-inference.huggingface.co/models/openchat/openchat-3.5-010
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 
+
 class ChatAPIViewSet(ViewSet):
     # @method_decorator(cache_page(60*60*2))
     # @method_decorator(vary_on_headers("Authorization",))
@@ -40,14 +41,15 @@ class ChatAPIViewSet(ViewSet):
         context='A partir de agora você é um chat especializado para customer success, na área de podologia, portanto, responda a mensagem a seguir (Lembre de respeitar os direitos humanos, sem palavras de baixo calão e sem autodiagnóstico, apenas sugestões, mas sempre sugerindo um atendimento de um profissional especializado na All Pé, perguntando se gostaria de agendar atendimento com algum): ', 
         user_input=None):
         
-        with open("chat_messages.json", 'r') as f:
-            chat = json.loads(f.read())
-            f.close()
-        i = 2
-
-        if not chat:
-            chat = []
-            i = 1
+        try:
+            with open("chat_messages.json", 'r') as f:
+                chat = json.loads(f.read())
+                f.close()
+            i = 2
+        except:
+            if not chat:
+                chat = []
+                i = 1
 
         user_input = request.data.get('prompt')
         if not user_input:
