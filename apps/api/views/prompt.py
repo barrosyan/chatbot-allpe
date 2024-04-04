@@ -42,8 +42,8 @@ class ChatAPIViewSet(ViewSet):
         user_input=None):
         
         try:
-            with open("chat_messages.json", 'r') as f:
-                chat = json.loads(f.read())
+            with open("chat_messages.txt", 'r') as f:
+                chat = f.readlines())
                 f.close()
             i = 2
         except:
@@ -75,8 +75,8 @@ class ChatAPIViewSet(ViewSet):
 
             chat.append(translated_output)
 
-            with open("chat_messages.json", 'w') as f:
-                f.write(json.dumps(chat, indent=4, ensure_ascii=False))
+            with open("chat_messages.txt", 'w') as f:
+                f.write(chat.join('\n'))
                 f.close()
             return JsonResponse({'message': translated_output})
         else:
