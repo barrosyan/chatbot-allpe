@@ -1,0 +1,246 @@
+dataset = [
+    {
+        "tag_question":[
+             "dor", 
+             "unha encravada"
+             ],
+        "answers":[
+            "Para aliviar a dor de uma unha encravada, você pode mergulhar o pé em água morna com sal por cerca de 15-20 minutos, várias vezes ao dia. Isso pode ajudar a reduzir a inflamação. No entanto, é importante procurar um podólogo para avaliar a situação e recomendar o tratamento adequado."
+            "Para prevenir unhas encravadas, corte as unhas retas, evitando cortá-las muito curtas. Use sapatos confortáveis que não apertem os dedos. Se você tem problemas recorrentes com unhas encravadas, é importante consultar um podólogo para uma avaliação profissional.",
+            "Para prevenir unhas encravadas, corte as unhas retas, evitando cortá-las muito curtas. Use sapatos confortáveis que não apertem os dedos. Se você tem problemas recorrentes com unhas encravadas, é importante consultar um podólogo para uma avaliação profissional.",
+            ]
+    },
+    {
+        "tag_question":[
+            "tratamento",
+            "calos"
+        ],
+        "answers":[
+            "Para calos, você pode tentar amolecer a pele afetada mergulhando-a em água morna e usando uma pedra-pomes para remover suavemente a pele endurecida. No entanto, se os calos forem persistentes ou causarem desconforto, é melhor buscar a orientação de um podólogo.",
+            "Calos nos pés podem ser comuns, especialmente em áreas sujeitas a pressão ou atrito, como a planta dos pés e os calcanhares. No entanto, se os calos forem dolorosos, persistentes ou causarem desconforto ao caminhar, é importante consultar um podólogo para avaliar a situação e recomendar o tratamento adequado.",
+        ]
+    },
+    {
+        "tag_question":[
+            "mau-cheiro",
+            "mau cheiro",
+            "mau-odor",
+            "mal-odor",
+            "mal-cheiro",
+            "mal cheiro",
+            "mal-odor",
+            "mal odor",
+            "catinga",
+            "cheiro ruim",
+            "tratamento",
+            "aliviar",
+            "alivio",
+            "ajuda"
+        ],
+        "answers":[
+            "Para evitar o mau odor nos pés, lave os pés diariamente com água e sabão, e seque-os completamente, especialmente entre os dedos. Use meias limpas e troque-as regularmente. Também é útil alternar o uso de sapatos para permitir que eles sequem completamente entre os usos. Se o mau odor persistir, consulte um podólogo para descartar problemas como infecções fúngicas.",            
+            
+        ]
+    },
+    {
+        "tag_question":[
+            "fungo",
+            "unha"
+        ],
+        "answers":[
+            "O tratamento de fungos nas unhas geralmente requer medicação antifúngica tópica ou oral, prescrita por um médico ou podólogo. Além disso, é importante manter os pés limpos e secos, usar meias limpas e trocá-las regularmente, e evitar andar descalço em locais públicos, como vestiários e piscinas.",            
+        ]
+    },
+    {
+        "tag_question":[
+            "cortar",
+            "unha",
+            "sugestao",
+            "melhor forma"
+        ],
+        "answers":[
+            "Para cortar as unhas dos pés, use um cortador de unhas limpo e afiado. Corte as unhas retas e não muito curtas, para evitar unhas encravadas. Se você tiver dificuldade em cortar as unhas dos pés ou se tiver problemas como unhas encravadas, consulte um podólogo para orientação profissional.",
+        ]
+    },
+    {
+        "tag_question":[
+            "dor".
+            "joanetes"
+        ],
+        "answers":[
+            "Para aliviar a dor causada por joanetes, você pode aplicar gelo na área dolorida, usar calçados confortáveis e que não apertem os dedos, e evitar atividades que aumentem a pressão sobre os joanetes. No entanto, é importante consultar um podólogo para avaliar a gravidade do problema e recomendar o tratamento adequado."
+        ]
+    },
+    {
+        "tag_question":[
+            "tratamento",
+            "verruga"
+        ],
+        "answers":[
+            "O tratamento para verrugas plantares pode incluir o uso de medicamentos tópicos, crioterapia (congelamento), ou tratamentos a laser. Consulte um podólogo para avaliar a verruga plantar e recomendar o melhor tratamento para o seu caso específico.",
+        ]
+    },
+    {
+        "tag_question":[
+            "prevenir",
+            "previnir",
+            "tratamento",
+            "profilaxia",
+            "bolhas",
+            "bolhas nos pes"
+        ],
+        "answers":[
+            "Para prevenir bolhas nos pés, use sapatos confortáveis e que se ajustem corretamente, evitando sapatos muito apertados ou soltos. Use meias adequadas que absorvam a umidade e reduzam o atrito. Se você está propenso a bolhas, considere usar produtos como fita micropore para proteger áreas sensíveis. Se as bolhas forem frequentes ou dolorosas, consulte um podólogo para avaliação.",
+            "Para cuidar de bolhas nos pés, limpe a área com água e sabão suavemente, mantendo a bolha intacta. Aplique uma pomada antibiótica e cubra com um curativo estéril. Evite estourar a bolha, pois isso pode aumentar o risco de infecção. Se a bolha estiver dolorida ou se houver sinais de infecção, consulte um podólogo para avaliação e tratamento adequado."
+        ]
+    },
+    {
+        "tag_question":[
+            "pe de atleta"
+        ],
+        "answers":[
+            "Para o tratamento do pé de atleta, é importante manter os pés limpos e secos, aplicar medicamentos antifúngicos tópicos conforme as instruções do médico ou podólogo, e evitar compartilhar objetos pessoais, como toalhas e sapatos. Se o pé de atleta persistir ou piorar, consulte um profissional de saúde.",            
+        ]
+    },
+    {
+        "tag_question":[
+            "podologia"
+        ],
+        "answers":[
+            "A podologia é a área da saúde que trata dos pés, diagnosticando e tratando problemas como unhas encravadas, calos, verrugas, entre outros. Os podólogos são profissionais especializados em cuidar da saúde dos pés.",
+            "A podologia é importante para manter a saúde dos pés, que são fundamentais para o nosso bem-estar e mobilidade. Cuidar dos pés ajuda a prevenir problemas como dor, infecções e deformidades.",
+
+        
+        ]
+    },
+    {
+        "tag_question":[
+            "ola",
+            "oi",
+            "oii",
+            "tudo bem?"
+            "bom dia",
+            "boa tarde",
+            "boa noite",
+            "preciso de ajuda",
+            "eai",
+            "eae",
+            "pode me ajudar?"
+            "opa",
+            "preciso de um atendimento",
+            "preciso de atendimento",
+            "alo"
+        ],
+        "answers":[
+            "Olá! Tudo bem? Meu nome é Vanessa, sou a atendente virtual da All Pé. Como posso te ajudar hoje?",
+            "Oii! Aqui quem fala é a Vanessa, sou a atendente virtual da All Pé. Como posso te ajudar hoje?",
+            "Oi, tudo bem? Sou a Vanessa, atendente virtual da All Pé. Estou aqui para te auxiliar sobre dúvidas básicas na área de podologia e direcionar melhor seu atendimento. Como consigo te ajudar hoje?",
+            "Olá, me chamo Vanessa, sou uma assistente virtual, para melhor direcionar seu atendimento preciso que me fale um pouco sobre o atendimento que deseja, por favor. 💙"
+        ]
+    },
+    {
+        "tag_question":[
+            "so isso",
+            "obrigado",
+            "resolveu",
+            "xau",
+            "ate logo",
+            "adeus",
+            "obrigada",
+            "obrigado pela ajuda",
+            "obrigada pela ajuda",
+            "agradeco pela informacao"
+        ],
+        "answers":[
+            "Se precisar de mais alguma coisa, estou à disposição. A All Pé agradece seu contato!",
+            "Se surgir mais alguma dúvida ou se precisar de mais informações, estou aqui para ajudar. A All Pé agradece seu contato!",
+            "A All Pé agradece seu contato! Tenha um ótimo dia!", 
+            "Tenha um ótimo dia! Se precisar de mais alguma coisa, já sabe onde me procurar. A All Pé agradece seu contato!"
+            "Fico feliz em poder ajudar! Se precisar de mais alguma coisa, estou à disposição. A All Pé agradece seu contato!"
+
+        ]
+    },
+    {
+        "tag_question":[
+            "vaga",
+            "disponibilidade",
+            "atendimento",
+            "consulta",
+            "agendar",
+            "agendamento",
+            "quando pode atender",
+            "quando pode me atender"
+        ],
+        "answers":[
+            "Certinho. Vou conferir em nossas agendas e te retorno daqui a pouquinho, certo?",
+            "Vou conferir a agenda dos nossos medicos e ja lhe informo."
+        ]
+    },
+    {
+        "tag_question":[
+            "certo",
+            "ok",
+            "fico no aguardo"
+        ],
+        "answers":[
+            "Sem resposta."
+        ]
+    },
+    {
+        "tag_question":[
+            "remarcar",
+            "remarcacao",
+            "mudanca de horario",
+            "cancelamento"
+        ],
+        "answers":[
+            "Certo. Pode me confirmar seu nome e o medico no qual estava agendado, por favor?",
+            "Poxa, aconteceu algum imprevisto? Sabe me dizer qual o nome do profissional e o horário de atendimento?"
+        ]
+    },
+    {
+        "tag_question":[
+            "atrasar",
+            "atraso",
+            "demorar",
+            "chegar",
+            "chegada"
+        ],
+        "answers":[
+            "Oii! Sem problemas. Conseguimos segurar seu atendimento até 20 min. Caso ultrapasse o tempo, se faz necessario remarcação de horario. Deseja remarcar o horario ou mantenho no atual?"
+        ]
+    },
+    {
+        "tag_question":[
+            "produtos",
+            "remedio",
+            "pomada",
+            "medicamento",
+        ],
+        "answers":[
+            "Oii! Sim sim, possuímos diversos produtos do ramo de podologia. Estarei enviando uma lista com os produtos disponiveis para sua regiao em instantes."
+        ]
+    },
+    {
+        "tag_question":[
+            "nao precisa",
+            "nao, obrigado",
+        ],
+        "answers":[
+            "Sem problemas. Ajudo em algo mais?"
+        ]
+    },
+    {
+        "tag_question":[
+            "marcacao",
+            "agendamento",
+            "agendar",
+            "marcar",
+            "consulta",
+            "atendimento"
+        ],
+        "answers":[
+            "Precisamos apenas do seu nome e da especialidade do profissional."
+        ]
+    },
+]
