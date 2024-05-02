@@ -1,40 +1,42 @@
 from flask import Flask, request, jsonify
-from chatterbot import ChatBot
-from chatterbot.trainers import ListTrainer
-
-bot = ChatBot('AllBot', read_only = True, 
-              preprocessors=['chatterbot.preprocessors.convert_to_ascii', 
-                             'chatterbot.preprocessors.unescape_html',
-                             'chatterbot.preprocessors.clean_whitespace'],
-             logic_adapters = [
-                 {
-                     'import_path': 'chatterbot.logic.BestMatch',
-                     'default_response': 'Sorry, I am unable to process your request. Please try again, or contact us for help.',
-                     'maximum_similarity_threshold': 0.75
-                 }
-             ],)
-
-trainer = ListTrainer(bot)
-
-with open ('dataset.txt', 'r') as f:
-    chatbot_responses = f.readlines()
-
-for i in range(0, len(chatbot_responses), 2):
-    question = chatbot_responses[i].replace('"','').replace(',\n','').replace(', \n','')
-    answer = chatbot_responses[i+1].replace('"','').replace(',\n','').replace(', \n','')
-    trainer.train([
-        question,
-        answer,
-    ])
+import json
+import nltk
+from nltk.tokenize import word_tokenize
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
 
 app = Flask(__name__)
 
+with open('dataset.json', 'r', encoding='utf-8') as file:
+    data = json.load(file)
+
+user_sentences = []
+tag_words_lists = []
+
+for item in data:
+    tag_words = ' '.join(item['tag_question'])
+    tag_words_lists.append(tag_words)
+    for answer in item['answers']:
+        user_sentences.append(answer)
+
+nltk.download('punkt')
+tfidf_vectorizer = TfidfVectorizer()
+tag_words_vectors = tfidf_vectorizer.fit_transform(tag_words_lists)
+
+def get_most_similar_tag(sentence):
+    sentence_vector = tfidf_vectorizer.transform([sentence])
+    similarities = cosine_similarity(sentence_vector, tag_words_vectors)
+    most_similar_tag_index = np.argmax(similarities)
+    return most_similar_tag_index
+
 @app.route('/get_response', methods=['POST'])
 def get_response():
-    data = request.get_json()
-    query = data['query']
-    response = str(bot.get_response(query))
-    return jsonify({'response': response})
+    user_input = request.json['user_input']
+    most_similar_tag_index = get_most_similar_tag(user_input)
+    answers_for_tag = data[most_similar_tag_index]['answers']
+    chosen_answer = np.random.choice(answers_for_tag)
+    return jsonify({'response': chosen_answer})
 
 if __name__ == '__main__':
     app.run(debug=True)
