@@ -64,7 +64,7 @@ dataset = [
     },
     {
         "tag_question":[
-            "dor".
+            "dor",
             "joanetes"
         ],
         "answers":[
