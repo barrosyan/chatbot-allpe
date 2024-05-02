@@ -7,6 +7,7 @@ WORKDIR /app
 # Copie os arquivos necessários para o contêiner
 COPY requirements.txt /app
 COPY app.py /app
+COPY dataset.json /app 
 
 # Instale as dependências da aplicação
 RUN pip install --upgrade pip setuptools && \
