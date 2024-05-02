@@ -18,4 +18,4 @@ RUN pip install --upgrade pip setuptools && \
 EXPOSE 5000
 
 # Comando para iniciar a aplicação Flask
-CMD ["python", "-m", "flask", "run", "--host=34.72.228.16"]
+CMD ["python", "-m", "flask", "run", "--host=0.0.0.0", "--port=5000"]
